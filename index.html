@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="su">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media Pembelajaran Interaktif: Dongeng Sunda Kelas 7</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Font: Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .tab-active {
+            border-bottom: 3px solid #d97706;
+            color: #b45309;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body class="bg-amber-50/50 text-slate-800 min-h-screen flex flex-col justify-between">
+
+    <!-- Header / Katumbu Utama -->
+    <header class="bg-amber-700 text-white shadow-md">
+        <div class="max-w-5xl mx-auto px-4 py-6 text-center">
+            <span class="bg-amber-800 text-amber-200 text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wider">Kurikulum Merdeka • Kelas 7 SMP</span>
+            <h1 class="text-2xl md:text-3xl font-bold mt-2">Pangajaran Dongeng Sunda</h1>
+            <p class="text-amber-100 text-sm md:text-base mt-1">Kearifan Lokal, Unsur Intrinsik, Literasi Kritis, & Numerasi Kontekstual</p>
+        </div>
+    </header>
+
+    <!-- Navigasi Menu Tab -->
+    <nav class="bg-white shadow-sm sticky top-0 z-10">
+        <div class="max-w-5xl mx-auto flex justify-around overflow-x-auto">
+            <button onclick="switchTab('materi')" id="btn-materi" class="tab-active py-4 px-4 text-sm md:text-base transition whitespace-nowrap focus:outline-none">📜 Materi & Unsur</button>
+            <button onclick="switchTab('baca')" id="btn-baca" class="py-4 px-4 text-sm md:text-base text-slate-500 hover:text-amber-600 transition whitespace-nowrap focus:outline-none">📖 Baca Dongeng</button>
+            <button onclick="switchTab('literasi')" id="btn-literasi" class="py-4 px-4 text-sm md:text-base text-slate-500 hover:text-amber-600 transition whitespace-nowrap focus:outline-none">🤔 Literasi Kritis</button>
+            <button onclick="switchTab('numerasi')" id="btn-numerasi" class="py-4 px-4 text-sm md:text-base text-slate-500 hover:text-amber-600 transition whitespace-nowrap focus:outline-none">📐 Numerasi Tani</button>
+            <button onclick="switchTab('evaluasi')" id="btn-evaluasi" class="py-4 px-4 text-sm md:text-base text-slate-500 hover:text-amber-600 transition whitespace-nowrap focus:outline-none">🏆 Skor Ahir</button>
+        </div>
+    </nav>
+
+    <!-- Konten Utama -->
+    <main class="max-w-5xl mx-auto px-4 py-8 flex-grow w-full">
+
+        <!-- MODUL 1: MATERI & UNSUR INTRINSIK -->
+        <section id="content-materi" class="space-y-6">
+            <div class="bg-white p-6 rounded-2xl shadow-sm border border-amber-100">
+                <h2 class="text-xl font-bold text-amber-800 mb-3">Naon Ari Dongeng Téh?</h2>
+                <p class="text-slate-600 leading-relaxed">
+                    Dongeng nyaéta carita wangun prosa wُولian (warisan turun-temurun) anu biasana ngandung unsur pamohalan (pamali/fiksi) tapi pinuh ku piwuruk, atikan karakter, jeung kearifan lokal masarakat Sunda. Contona: *Si Kancil*, *Sasakala Situ Bagendit*, jeung *Lutung Kasarung*.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-amber-100">
+                    <h3 class="font-bold text-lg mb-3 text-amber-900 flex items-center gap-2">
+                        <span class="w-8 h-8 bg-amber-100 text-amber-800 rounded-lg flex items-center justify-center text-sm">🧩</span> 
+                        Unsur Intrinsik Dongeng
+                    </h3>
+                    <ul class="text-sm text-slate-600 space-y-2.5">
+                        <li><strong>Téma:</strong> Pokok pikiran atawa inti carita.</li>
+                        <li><strong>Latar (Setting):</strong> Waktu, tempat, jeung suasana kajadian.</li>
+                        <li><strong>Palaku (Tokoh):</strong> Tokoh anu ngalakon dina carita.</li>
+                        <li><strong>Galur (Alur):</strong> Runtuyan kajadian ti awal nepi ka tamat.</li>
+                        <li><strong>Amanat:</strong> Piwuruk atawa pesen moral tina carita.</li>
+                    </ul>
+                </div>
+
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-amber-100">
+                    <h3 class="font-bold text-lg mb-3 text-amber-900 flex items-center gap-2">
+                        <span class="w-8 h-8 bg-amber-100 text-amber-800 rounded-lg flex items-center justify-center text-sm">💡</span> 
+                        Rupa-rupa Dongeng Sunda
+                    </h3>
+                    <ul class="text-sm text-slate-600 space-y-2.5">
+                        <li><strong>Fabel:</strong> Dongeng sasatoan (contona: Kancil jeung Monyet).</li>
+                        <li><strong>Sasakala:</strong> Asal-usul hiji tempat atawa barang (contona: Situ Bagendit).</li>
+                        <li><strong>Mite / Lalakon:</strong> Nyaritakeun lelembutan atawa karuhun.</li>
+                        <li><strong>Parabel:</strong> Nyaritakeun jalma biasa anu mahiwal (contona: Kabayan).</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Tombol Lanjutkeun -->
+            <div class="flex justify-end pt-4">
+                <button onclick="switchTab('baca')" class="bg-amber-600 hover:bg-amber-700 text-white font-semibold px-6 py-3 rounded-xl transition shadow-sm flex items-center gap-2">
+                    Lanjutkeun ka Maca Dongeng ➡️
+                </button>
+            </div>
+        </section>
+
+        <!-- MODUL 2: BACA DONGENG (SITU BAGENDIT) -->
+        <section id="content-baca" class="hidden space-y-6">
+            <div class="bg-white p-6 rounded-2xl shadow-sm border border-amber-100">
+                <div class="flex justify-between items-center mb-4">
+                    <h2 class="text-xl font-bold text-amber-800">Sasakala Situ Bagendit (Ringkesan)</h2>
+                    <span class="bg-amber-100 text-amber-800 text-xs font-semibold px-3 py-1 rounded-full">Fabel / Sasakala</span>
+                </div>
+                
+                <!-- Kotak Bacaan -->
+                <div class="bg-amber-50/50 p-6 rounded-xl border border-amber-200 text-sm md:text-base text-slate-700 space-y-4 leading-relaxed max-h-96 overflow-y-auto">
+                    <p>Dina jaman baheula, aya hiji randa beunghar ngaranna Nyai Bagendit. Imahna mangrupa istana megah sarta legana sawahna béak ka ditu ka dieu. Sanajan beunghar, Nyai Bagendit kacida meditna, tara daék tutulung ka jalma miskin nu kalaparan di Lembur Banyuresmi.</p>
+                    <p>Hiji poé, datang kolot begang anu nyuhunkeun cai kusabab kashausan. Lain dibéré tulisan atawa dahareun, Nyai Bagendit malah diusir bari dicaci maki ku kecap-kecap nu kasar.</p>
+                    <p>Eta kolot téh indit bari nancebkeun séké (tongkat) kana taneuh bari nyarita: "Sing saha anu bisa nyabut ieu séké, bakal aya cai nu kaluar." Geus kitu mah éta kolot leungit tanpa lebih. Jalma-jalma dicoba nyabut éta séké tapi taya nu sanggup. Ahirnya éta séké dicabut ku nu boga na sorangan (atawa ku kolot séjénna dumasar vérsi), sarta kaluar cai ngagelebug nu ngabanjir sakabeh lembur nepi ka jadi situ anu kiwari katelah Situ Bagendit.</p>
+                </div>
+            </div>
+
+            <!-- Tombol Lanjutkeun -->
+            <div class="flex justify-between pt-4">
+                <button onclick="switchTab('materi')" class="bg-slate-200 hover:bg-slate-300 text-slate-700 font-semibold px-6 py-3 rounded-xl transition">⬅️ Sateuacanna</button>
+                <button onclick="switchTab('literasi')" class="bg-amber-600 hover:bg-amber-700 text-white font-semibold px-6 py-3 rounded-xl transition shadow-sm flex items-center gap-2">
+                    Lanjutkeun ka Literasi Kritis ➡️
+                </button>
+            </div>
+        </section>
+
+        <!-- MODUL 3: LITERASI KRITIS -->
+        <section id="content-literasi" class="hidden space-y-6">
+            <div class="bg-white p-6 rounded-2xl shadow-sm border border-amber-100 space-y-4">
+                <h2 class="text-xl font-bold text-amber-800 mb-1">Modul Literasi Kritis: Studi Kasus Nyata</h2>
+                <p class="text-sm text-slate-500">Jawab pananya ieu dumasar kana pesen moral carita Situ Bagendit dina kahirupan sapopoé!</p>
+                
+                <div class="bg-slate-50 p-4 rounded-xl border border-slate-200 text-sm text-slate-700 space-y-2">
+                    <p class="font-semibold text-slate-900">Pananya 1:</p>
+                    <p>Upama anjeun hirup di zaman kiwari sarta jadi jalma anu suksés tur boga harta mangrupa-rupa, kumaha cara anjeun ngokolakeun harta éta sangkan henteu katarajang mamala kawas Nyai Bagendit sarta mawa mangpaat ka warga sakurilingna?</p>
+                </div>
+
+                <div class="space-y-2">
+                    <label class="flex items-start gap-3 p-3 rounded-xl border border-slate-200 hover:bg-amber-50/50 cursor-pointer transition">
+                        <input type="radio" name="lit-q1" value="salah" class="mt-1">
+                        <span class="text-sm text-slate-700">Nyimpen kabéh harta di bank pribadi sarta teu maliré ka tatangga nu susah sabaraha usaha sorangan.</span>
+                    </label>
+                    <label class="flex items-start gap-3 p-3 rounded-xl border border-slate-200 hover:bg-amber-50/50 cursor-pointer transition">
+                        <input type="radio" name="lit-q1" value="bener" class="mt-1">
+                        <span class="text-sm text-slate-700"><strong>Ngabagikeun sawaréh harta ngaliwatan kagiatan sosial (zakat, sedekah, CSR), sarta ngajaga silaturahmi sarta empati ka masarakat sekitar.</strong></span>
+                    </label>
+                    <label class="flex items-start gap-3 p-3 rounded-xl border border-slate-200 hover:bg-amber-50/50 cursor-pointer transition">
+                        <input type="radio" name="lit-q1" value="salah" class="mt-1">
+                        <span class="text-sm text-slate-700">Méré sumbangan ngan ukur ka kulawarga sorangan sarta nyingkahan jalma séjén.</span>
+                    </label>
+                </div>
+
+                <button onclick="periksaLiterasi()" class="bg-amber-600 text-white font-semibold px-6 py-2.5 rounded-xl hover:bg-amber-700 transition shadow-sm">Pariksa Jawaban Literasi</button>
+                <div id="feedback-literasi" class="hidden p-4 rounded-xl text-sm mt-3"></div>
+            </div>
+
+            <!-- Tombol Lanjutkeun -->
+            <div class="flex justify-between pt-4">
+                <button onclick="switchTab('baca')" class="bg-slate-200 hover:bg-slate-300 text-slate-700 font-semibold px-6 py-3 rounded-xl transition">⬅️ Sateuacanna</button>
+                <button onclick="switchTab('numerasi')" class="bg-amber-600 hover:bg-amber-700 text-white font-semibold px-6 py-3 rounded-xl transition shadow-sm flex items-center gap-2">
+                    Lanjutkeun ka Numerasi Tani ➡️
+                </button>
+            </div>
+        </section>
+
+        <!-- MODUL 4: NUMERASI KONTEKSTUAL -->
+        <section id="content-numerasi" class="hidden space-y-6">
+            <div class="bg-white p-6 rounded-2xl shadow-sm border border-amber-100 space-y-4">
+                <h2 class="text-xl font-bold text-amber-800 mb-1">Modul Numerasi: Hasil Bumi Nyai Bagendit</h2>
+                <p class="text-sm text-slate-600 leading-relaxed">
+                    Nyai Bagendit miboga <strong>5 gudang paré</strong>. Unggal gudang eusina persis <strong>2.400 kg</strong> paré. Dina usum halodo anu pohara, manéhna kapaksa (atanapi mutuskeun) ngabagikeun <strong>35% tina total paré</strong> ka masarakat miskin anu kasangsaraan di sabudeureun lembur.
+                </p>
+
+                <div class="space-y-4 pt-2">
+                    <div>
+                        <label class="block text-sm font-semibold text-slate-700 mb-1">1. Sabaraha kilogram (kg) total paré Nyai Bagendit sadayana saméméh dibagikeun?</label>
+                        <input type="number" id="num-q1" placeholder="Asupkeun angka..." class="w-full px-4 py-2 rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-amber-500">
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-semibold text-slate-700 mb-1">2. Sabaraha kilogram (kg) paré anu dibagikeun ka masarakat miskin (35%)?</label>
+                        <input type="number" id="num-q2" placeholder="Asupkeun angka..." class="w-full px-4 py-2 rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-amber-500">
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-semibold text-slate-700 mb-1">3. Sabaraha kilogram (kg) sésana paré dina gudang Nyai Bagendit ayeuna?</label>
+                        <input type="number" id="num-q3" placeholder="Asupkeun angka..." class="w-full px-4 py-2 rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-amber-500">
+                    </div>
+
+                    <button onclick="periksaNumerasi()" class="bg-amber-600 text-white font-semibold px-6 py-2.5 rounded-xl hover:bg-amber-700 transition shadow-sm">Pariksa Jawaban Numerasi</button>
+                    <div id="feedback-numerasi" class="hidden p-4 rounded-xl text-sm mt-3"></div>
+                </div>
+            </div>
+
+            <!-- Tombol Lanjutkeun -->
+            <div class="flex justify-between pt-4">
+                <button onclick="switchTab('literasi')" class="bg-slate-200 hover:bg-slate-300 text-slate-700 font-semibold px-6 py-3 rounded-xl transition">⬅️ Sateuacanna</button>
+                <button onclick="switchTab('evaluasi')" class="bg-amber-600 hover:bg-amber-700 text-white font-semibold px-6 py-3 rounded-xl transition shadow-sm flex items-center gap-2">
+                    Lanjutkeun ka Skor Ahir 🏆
+                </button>
+            </div>
+        </section>
+
+        <!-- MODUL 5: EVALUASI & SKOR AKHIR -->
+        <section id="content-evaluasi" class="hidden space-y-6">
+            <div class="bg-white p-6 rounded-2xl shadow-sm border border-amber-100 text-center py-8">
+                <h2 class="text-2xl font-bold text-slate-800 mb-2">Rékapitulasi Skor Kompetensi Siswa</h2>
+                <p class="text-sm text-slate-500 mb-6">Pencet tombol di handap pikeun ningali total akumulasi skor tina modél literasi jeung numerasi.</p>
+
+                <div class="inline-block bg-amber-50 border border-amber-200 px-8 py-6 rounded-3xl mb-6">
+                    <span class="text-xs text-amber-800 uppercase tracking-wider font-semibold block mb-1">Total Skor Anjeun</span>
+                    <span id="skor-akhir" class="text-5xl font-extrabold text-amber-700">0</span>
+                    <span class="text-amber-600 text-lg font-bold"> / 100</span>
+                </div>
+
+                <div>
+                    <button onclick="hitungSkorTotal()" class="bg-amber-600 text-white font-bold px-8 py-3 rounded-xl hover:bg-amber-700 transition shadow-md">Kalkulasi Skor Ahir</button>
+                </div>
+                <div id="pesan-feedback" class="mt-6 text-sm font-medium text-slate-700 max-w-md mx-auto"></div>
+            </div>
+
+            <!-- Tombol Sateuacanna -->
+            <div class="flex justify-start pt-4">
+                <button onclick="switchTab('numerasi')" class="bg-slate-200 hover:bg-slate-300 text-slate-700 font-semibold px-6 py-3 rounded-xl transition">⬅️ Sateuacanna</button>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t border-slate-200 mt-12 py-6 text-center text-xs text-slate-500">
+        <p>Media Pembelajaran Interaktif Basa Sunda • Kurikulum Merdeka SMP Kelas 7 (Materi Dongeng)</p>
+    </footer>
+
+    <!-- JavaScript Interaktif -->
+    <script>
+        // Fungsi pindah tab / modul
+        function switchTab(tabName) {
+            const tabs = ['materi', 'baca', 'literasi', 'numerasi', 'evaluasi'];
+            tabs.forEach(t => {
+                document.getElementById(`content-${t}`).classList.add('hidden');
+                document.getElementById(`btn-${t}`).classList.remove('tab-active', 'text-amber-700', 'font-semibold');
+                document.getElementById(`btn-${t}`).classList.add('text-slate-500');
+            });
+
+            document.getElementById(`content-${tabName}`).classList.remove('hidden');
+            document.getElementById(`btn-${tabName}`).classList.add('tab-active');
+            document.getElementById(`btn-${tabName}`).classList.remove('text-slate-500');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Variabel Status Kelulusan Tes
+        let statusLiterasi = false;
+        let statusNumerasi = false;
+
+        // Validasi Literasi Kritis
+        function periksaLiterasi() {
+            const selected = document.querySelector('input[name="lit-q1"]:checked');
+            const feedback = document.getElementById('feedback-literasi');
+            feedback.classList.remove('hidden');
+
+            if (!selected) {
+                feedback.className = "p-4 rounded-xl text-sm mt-3 bg-amber-50 text-amber-800 border border-amber-200";
+                feedback.innerText = "Mangga pilih salah sahiji jawaban heula!";
+                statusLiterasi = false;
+                return;
+            }
+
+            if (selected.value === "bener") {
+                feedback.className = "p-4 rounded-xl text-sm mt-3 bg-emerald-50 text-emerald-800 border border-emerald-200 font-medium";
+                feedback.innerHTML = "<strong>Leres pisan! (Skor: 50)</strong> Anjeun gaduh penalaran kritis anu saé ngeunaan pentingna empati sosial sareng cara ngokolakeun harta sacara wijaksana.";
+                statusLiterasi = true;
+            } else {
+                feedback.className = "p-4 rounded-xl text-sm mt-3 bg-rose-50 text-rose-800 border border-rose-200 font-medium";
+                feedback.innerHTML = "<strong>Kurang tepat.</strong> Cobi emutan deui piwuruk tina carita Nyai Bagendit anu medit ka papada manusa.";
+                statusLiterasi = false;
+            }
+        }
+
+        // Validasi Numerasi Tani
+        function periksaNumerasi() {
+            const ans1 = parseInt(document.getElementById('num-q1').value);
+            const ans2 = parseInt(document.getElementById('num-q2').value);
+            const ans3 = parseInt(document.getElementById('num-q3').value);
+            const feedback = document.getElementById('feedback-numerasi');
+            feedback.classList.remove('hidden');
+
+            // Hitung: 
+            // Total = 5 gudang * 2400 = 12000 kg
+            // Bagian = 35% * 12000 = 4200 kg
+            // Sisa = 12000 - 4200 = 7800 kg
+            let b1 = (ans1 === 12000);
+            let b2 = (ans2 === 4200);
+            let b3 = (ans3 === 7800);
+
+            if (b1 && b2 && b3) {
+                feedback.className = "p-4 rounded-xl text-sm mt-3 bg-emerald-50 text-emerald-800 border border-emerald-200 font-medium";
+                feedback.innerHTML = "<strong>Leres sadayana! (Skor: 50)</strong> Perhitungan akurat: 5 × 2.400 = 12.000 kg total; 35% ti 12.000 = 4.200 kg dibagikeun; sésana 12.000 - 4.200 = 7.800 kg!";
+                statusNumerasi = true;
+            } else {
+                let pesan = "<strong>Koreksi Perhitungan:</strong> ";
+                if (!b1) pesan += "Nomer 1: 5 × 2.400 = 12.000 kg. ";
+                if (!b2) pesan += "Nomer 2: 35% × 12.000 = 4.200 kg. ";
+                if (!b3) pesan += "Nomer 3: 12.000 - 4.200 = 7.800 kg. ";
+                feedback.className = "p-4 rounded-xl text-sm mt-3 bg-rose-50 text-rose-800 border border-rose-200 font-medium";
+                feedback.innerHTML = pesan;
+                statusNumerasi = false;
+            }
+        }
+
+        // Hitung Skor Total
+        function hitungSkorTotal() {
+            let total = 0;
+            if (statusLiterasi) total += 50;
+            if (statusNumerasi) total += 50;
+
+            document.getElementById('skor-akhir').innerText = total;
+            const pesanFeedback = document.getElementById('pesan-feedback');
+
+            if (total === 100) {
+                pesanFeedback.className = "mt-6 text-sm font-medium text-emerald-700 bg-emerald-50 p-4 rounded-xl border border-emerald-200";
+                pesanFeedback.innerText = "⭐ Luar biasa! Anjeun ngawasa materi dongeng, analisis kritis literasi, sareng numerasi hasil tani kalayan sampurna!";
+            } else if (total === 50) {
+                pesanFeedback.className = "mt-6 text-sm font-medium text-amber-700 bg-amber-50 p-4 rounded-xl border border-amber-200";
+                pesanFeedback.innerText = "⚠️ Saé pisan, tapi masih aya salah sahiji modul (literasi atanapi numerasi) anu teu acan leres atanapi divalidasi.";
+            } else {
+                pesanFeedback.className = "mt-6 text-sm font-medium text-rose-700 bg-rose-50 p-4 rounded-xl border border-rose-200";
+                pesanFeedback.innerText = "❌ Mangga pariksa deui jawaban dina modul literasi sareng numerasi di luhur supados skor tiasa maksimal.";
+            }
+        }
+    </script>
+</body>
+</html>
